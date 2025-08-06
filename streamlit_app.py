@@ -38,7 +38,8 @@ if uploaded_file is not None:
 
     st.markdown(f"### ✅ Prediction: `{predicted_label}`")
     st.markdown(f"**Confidence:** `{confidence:.2%}`")
-
+    
+!pip install streamlit pyngrok
 from pyngrok import ngrok
 import time
 import os

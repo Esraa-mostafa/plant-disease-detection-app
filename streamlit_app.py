@@ -39,20 +39,3 @@ if uploaded_file is not None:
     st.markdown(f"### ✅ Prediction: `{predicted_label}`")
     st.markdown(f"**Confidence:** `{confidence:.2%}`")
     
-!pip install streamlit pyngrok
-from pyngrok import ngrok
-import time
-import os
-
-# Kill existing tunnels if any
-ngrok.kill()
-
-# Start Streamlit app in background
-!streamlit run app.py &>/content/log.txt &
-
-# Wait a few seconds for Streamlit to launch
-time.sleep(5)
-
-# Open ngrok tunnel on default Streamlit port 8501
-public_url = ngrok.connect(8501)
-print(f"🌐 App is live at: {public_url}")
